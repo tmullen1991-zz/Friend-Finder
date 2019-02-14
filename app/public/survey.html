@@ -260,6 +260,7 @@
       //materialize jquery calls
       $("select").formSelect();
       $(".modal").modal();
+      // GET route to display a Modal of potential friends
       $("#show-friends").on("click", function() {
         $.ajax({ url: "/api/friends", method: "GET" }).then(function(friends) {
           // loop through freinds and display
@@ -276,26 +277,31 @@
           }
         });
       });
-      // click event
+      // click event for submitting survey data, also contains GET/POST routes
       $("#submit").on("click", function(event) {
         event.preventDefault();
+        // array that will contain user answers stored in for loop below
         var scores = [];
         for (i = 1; i <= 10; i++) {
           scores.push($("#question" + i).val());
         }
+        // User data stored in newFriend variable
         var newFriend = {
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: scores
         };
 
+        // POST route for newFriend data
         $.post("/api/friends", newFriend, function(data) {
           if (data) {
+            // GET route used to get JSON of friends to be matched with
             $.ajax({ url: "/api/friends", method: "GET" }).then(function(
               friends
             ) {
               // an array for storing the total difference in scores that will be stored in the same index position as the current friend value in the for loop below
               var differences = [];
+              // variable for handling the closet matched friend
               var match;
               // loop through each friend stored
               for (i = 0; i < friends.length; i++) {
@@ -317,10 +323,12 @@
                   }
                 }
               }
+              // display matched friend's data in a modal for then user to see
               $("#match-name").append(match.name);
               $("#match-photo").attr("src", match.photo);
               $("#match-scores").append("scores: " + match.scores.join(", "));
             });
+            // error for POST route 
           } else {
             alert("something went wrong");
           }

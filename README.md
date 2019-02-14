@@ -2,66 +2,32 @@
 
 ## What is the App?
 
-Bamazon-MySQL is a CLI app that acts as a simple Amazon knock off. The purpose of the app is to use simple MySQL commands in a node CLI to add, change and manioulate table data. The app utilizes inquirer, MySQL and console.table npm package managers to take user input, manipulate the database values and display MySQL object data as a table in node respectively.
+Friend-Finder is a basic full-stack webpage using express and heroku. If you want to check out the final product before reading click here! https://serene-brushlands-90227.herokuapp.com/ The app is basically a survey of 10 random questions that will compare the users answers to a list of other users and match the closets scoring friend. It also asks for the users name and a photo link for the users picture.
 
 ## How it Works
 
-The app has three basic functions:
+The app utilizes express to handle routing and get/post calls for handling data. Two routing files are used, htmlRoutes.js to handle routing between the home and survey pages and apiRouting.js to handle a GET route to reutrn a list of possible matches and a POST route to handle submitted user survey data. The GET call is handled inside of the POST call in order to call a JSON object, store the object, and use it within the GET route containing user data. See the code snippet below for logic or see it in the script at the bottom of survey.html.
 
-1. Customer View - calls a JS file which connects to a MySQL database and displays a basic table containing a list of products and price info. The user then selects an id number from the table and the amount of units they which to purchase. The values are then changed using MySQL commands sent from the JS file and order results displayed.
-
-![Alt Text](gifs/customer.gif)
-
-2. Manager View - prompts the user with 4 choices:
-
-   1. Products for Sale - Simply displays the products for sale table for the user to view.
-
-   ![Alt Text](gifs/products-for-sale.gif)
-
-   2. Low Inventory - Takes only products with a quantity value at or below 5 and displays them.
-
-   ![Alt Text](gifs/low-inv.gif)
-
-   3. Add Inventory - Prompts the user for the product id and amount to add to that product, then uses MySQL commands to change the databse values.
-
-   ![Alt Text](gifs/add-inv.gif)
-
-   4. Add New Porduct - Prompts the user for the new product name, department, unit price, and quantity available for sale numbers. After MySQL commands are used to add a new row to the products for sale table.
-
-   ![Alt Text](gifs/add-item.gif)
-
-3. Supervisor View - Coming soon...
-
-### How the Code Works
-
-JS files are used to connect to a MySQL databse and connection.query functions called from the MySQL npm package manager are used to use basic SQL commands to the database. Query functions are used depending on user input from inquirer. A switch statement is used for the four cases for the manager view app.
-
-### Examples of MySQL Commands
-
-Display Table Data
+### Example of POST/GET Callback
 
 ```
-connection.query("SELECT * FROM products", function(err, res) {
-    if (err) throw err
-    console.table(res);
-    connection.end();
-});
+// POST route for newFriend data
+    $.post("/api/friends", newFriend, function(data) {
+        if (data) {
+        // GET route used to get JSON of friends to be matched with
+        $.ajax({ url: "/api/friends", method: "GET" }).then(function(
+            friends
+        ) {
 ```
-
-Manipulating Database Data value from bamazonCustomer.js
-
-```
-connection.query("UPDATE products SET stock_quantity = ?, product_sales = ? WHERE id = ?",[updatedQuantity, overhead, response.product_id], function(err, res) {
-    if (err) throw err
-    connection.end();
-});
-```
-
-Creating a new row for the Products Table taking inquirer input from the user in bamazonManager.js
-
-```
-connection.query("INSERT INTO products(product_name, department_name, price, stock_quantity, product_sales VALUES( ? , ? , ? ,?, 0 )", [addItem.product_name, addItem.department_name, addItem.price, addItem.stock_quantity], function (err, stockRes) {
-    if (err) throw err
-    connection.end();
-});
+##### Logic for matching goes here, see script at bottom of survey.html
+```          
+            // display matched friend's data in a modal for then user to see
+            $("#match-name").append(match.name);
+            $("#match-photo").attr("src", match.photo);
+            $("#match-scores").append("scores: " + match.scores.join(", "));
+            });
+            // error for POST route
+        } else {
+        alert("something went wrong");
+    }
 ```

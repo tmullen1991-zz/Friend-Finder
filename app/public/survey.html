@@ -21,201 +21,230 @@
     <div class="container">
       <div class="row z-depth-5">
         <div class="col s1"></div>
-        <div class="col s10"></div>
-        <h2>
-          Survey Questions: answer with numbers 1-5 (1 dislike, 5 like the most)
-        </h2>
-        <div class="row z-depth-5" style="padding: 20px;">
-          <div class="input-field col s10">
-            <input placeholder="Name" id="name" type="text" class="validate" />
-            <label for="name">Name</label>
-          </div>
+        <div class="col s10">
+          <h2>
+            Survey Questions: answer with numbers 1-5 (1 dislike, 5 like the
+            most)
+          </h2>
 
-          <div class="input-field col s10">
-            <input
-              placeholder="Link to Photo"
-              id="photo"
-              type="text"
-              class="validate"
-            />
-            <label for="photo">Link</label>
-          </div>
-
-          <div class="questions">
-            <div class="col s12">
-              <h4>Question 1</h4>
-              <h6>Do you like dogs?</h6>
-              <div class="input-field col s12">
-                <select id="question1">
-                  <option value="1">1 (Strongly Disagree)</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5 (Strongly Agree)</option>
-                </select>
-                <label>Select Answer</label>
+          <div class="center" style="margin: 20px;">
+            <a
+              id="show-friends"
+              class="grey waves-effect waves-light btn modal-trigger"
+              href="#modal2"
+              >See Friends</a
+            >
+            <div id="modal2" class="modal">
+              <div class="modal-content">
+                <div class="friend-list"></div>
               </div>
-              <div class="divider"></div>
+              <div class="modal-footer">
+                <a
+                  href="#!"
+                  class="modal-close waves-effect waves-green btn-flat"
+                  >Close</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row z-depth-5" style="padding: 20px;">
+            <div class="input-field col s10">
+              <div class="firend-list"></div>
+              <input
+                placeholder="Name"
+                id="name"
+                type="text"
+                class="validate"
+              />
+              <label for="name">Name</label>
             </div>
 
-            <div class="col s12">
-              <h4>Question 2</h4>
-              <h6>Do you like cats?</h6>
-              <div class="input-field col s12">
-                <select id="question2">
-                  <option value="1">1 (Strongly Disagree)</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5 (Strongly Agree)</option>
-                </select>
-                <label>Select Answer</label>
-              </div>
-              <div class="col s12">
-                <h4>Question 3</h4>
-                <h6>Do you dislike pets?</h6>
-                <div class="input-field col s12">
-                  <select id="question3">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <div class="col s12">
-                <h4>Question 4</h4>
-                <h6>Do you like hot chocolate?</h6>
-                <div class="input-field col s12">
-                  <select id="question4">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <div class="col s12">
-                <h4>Question 5</h4>
-                <h6>Is Netflix and chill your go-to on an average night?</h6>
-                <div class="input-field col s12">
-                  <select id="question5">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <div class="col s12">
-                <h4>Question 6</h4>
-                <h6>Do you get bored easy?</h6>
-                <div class="input-field col s12">
-                  <select id="question6">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <div class="col s12">
-                <h4>Question 7</h4>
-                <h6>
-                  Do you procrastinate on any site or phone app way to much?
-                </h6>
-                <div class="input-field col s12">
-                  <select id="question7">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <div class="col s12">
-                <h4>Question 8</h4>
-                <h6>
-                  Do you enjoy movies in home or theater?(1 home, 5 theater, 3
-                  neutral)
-                </h6>
-                <div class="input-field col s12">
-                  <select id="question8">
-                    <option value="1">1 (home)</option>
-                    <option value="2">2</option>
-                    <option value="3">3(neutral)</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (theater)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <div class="col s12">
-                <h4>Question 9</h4>
-                <h6>Do you enjoy exercising?</h6>
-                <div class="input-field col s12">
-                  <select id="question9">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <div class="col s12">
-                <h4>Question 10</h4>
-                <h6>Do you hate surveys like this on Facebook?</h6>
-                <div class="input-field col s12">
-                  <select id="question10">
-                    <option value="1">1 (Strongly Disagree)</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5 (Strongly Agree)</option>
-                  </select>
-                  <label>Select Answer</label>
-                </div>
-                <div class="divider"></div>
-              </div>
-              <a
-                id="submit"
-                class="grey waves-effect waves-light btn modal-trigger"
-                href="#modal1"
-                >Submit</a
-              >
+            <div class="input-field col s10">
+              <input
+                placeholder="Link to Photo"
+                id="photo"
+                type="text"
+                class="validate"
+              />
+              <label for="photo">Link</label>
+            </div>
 
-              <div id="modal1" class="modal">
-                <div class="modal-content">
-                  <h3>Friend Mathched! :D</h3>
-                  <h5 id="match-name"></h5>
-                  <img id="match-photo" src="" />
-                  <h6 id="match-scores"></h6>
+            <div class="questions">
+              <div class="col s12">
+                <h4>Question 1</h4>
+                <h6>Do you like dogs?</h6>
+                <div class="input-field col s12">
+                  <select id="question1">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                  <label>Select Answer</label>
                 </div>
-                <div class="modal-footer">
-                  <a
-                    href="#!"
-                    class="modal-close waves-effect waves-green btn-flat"
-                    >Close</a
-                  >
+                <div class="divider"></div>
+              </div>
+
+              <div class="col s12">
+                <h4>Question 2</h4>
+                <h6>Do you like cats?</h6>
+                <div class="input-field col s12">
+                  <select id="question2">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                  <label>Select Answer</label>
+                </div>
+                <div class="col s12">
+                  <h4>Question 3</h4>
+                  <h6>Do you dislike pets?</h6>
+                  <div class="input-field col s12">
+                    <select id="question3">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="col s12">
+                  <h4>Question 4</h4>
+                  <h6>Do you like hot chocolate?</h6>
+                  <div class="input-field col s12">
+                    <select id="question4">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="col s12">
+                  <h4>Question 5</h4>
+                  <h6>Is Netflix and chill your go-to on an average night?</h6>
+                  <div class="input-field col s12">
+                    <select id="question5">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="col s12">
+                  <h4>Question 6</h4>
+                  <h6>Do you get bored easy?</h6>
+                  <div class="input-field col s12">
+                    <select id="question6">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="col s12">
+                  <h4>Question 7</h4>
+                  <h6>
+                    Do you procrastinate on any site or phone app way to much?
+                  </h6>
+                  <div class="input-field col s12">
+                    <select id="question7">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="col s12">
+                  <h4>Question 8</h4>
+                  <h6>
+                    Do you enjoy movies in home or theater?(1 home, 5 theater, 3
+                    neutral)
+                  </h6>
+                  <div class="input-field col s12">
+                    <select id="question8">
+                      <option value="1">1 (home)</option>
+                      <option value="2">2</option>
+                      <option value="3">3(neutral)</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (theater)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="col s12">
+                  <h4>Question 9</h4>
+                  <h6>Do you enjoy exercising?</h6>
+                  <div class="input-field col s12">
+                    <select id="question9">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="col s12">
+                  <h4>Question 10</h4>
+                  <h6>Do you hate surveys like this on Facebook?</h6>
+                  <div class="input-field col s12">
+                    <select id="question10">
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    <label>Select Answer</label>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <a
+                  id="submit"
+                  class="grey waves-effect waves-light btn modal-trigger"
+                  href="#modal1"
+                  >Submit</a
+                >
+
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <h3>Friend Mathched! :D</h3>
+                    <h5 id="match-name"></h5>
+                    <img id="match-photo" src="" />
+                    <h6 id="match-scores"></h6>
+                  </div>
+                  <div class="modal-footer">
+                    <a
+                      href="#!"
+                      class="modal-close waves-effect waves-green btn-flat"
+                      >Close</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -231,6 +260,22 @@
       //materialize jquery calls
       $("select").formSelect();
       $(".modal").modal();
+      $("#show-friends").on("click", function() {
+        $.ajax({ url: "/api/friends", method: "GET" }).then(function(friends) {
+          // loop through freinds and display
+          for (i = 0; i < friends.length; i++) {
+            var friendNumber = $("<h3>");
+            friendNumber.append("Friend #" + (i + 1));
+            var name = $("<h3>");
+            name.append(friends[i].name);
+            var photo = $("<img>")
+            $(photo).attr("src", friends[i].photo)
+            $(".friend-list").append(friendNumber);
+            $(".friend-list").append(name);
+            $(".friend-list").append(photo);
+          }
+        });
+      });
       // click event
       $("#submit").on("click", function(event) {
         event.preventDefault();
